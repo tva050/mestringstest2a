@@ -28,8 +28,6 @@ print("MINIMUM POINT OF FUNCTION lj_p")
 print("-----------------------------------------------------")
 print("x-min:", round(x_min, 3),"|", "y-min:", round(y_min,4))
 
-
-
 # Physical variables
 m = 1           # mass
 v = 0           # velocity
@@ -75,6 +73,3 @@ plt.xlabel("Time")
 plt.ylabel("Position")
 plt.title("r(t), (2a.5)")
 plt.show()
-
-
-
