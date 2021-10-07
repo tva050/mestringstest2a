@@ -48,8 +48,6 @@ dt = 0.001
 position_list = []  
 time_list = []
 
-vel_list = []
-
 while t < tmax:
     
     # Force 
@@ -76,6 +74,7 @@ plt.ylim((-0.3,0.1))
 plt.show()
 
 plt.plot(time_list, position_list, color = "red")
+plt.axhline(y=1.242, color = "black", linestyle = "--")
 plt.xlabel("Time")
 plt.ylabel("Position")
 plt.title("r(t), (2a.5)")
