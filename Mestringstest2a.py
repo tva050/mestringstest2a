@@ -62,7 +62,6 @@ while t < tmax:
     
     position_list.append(r)
     time_list.append(t)
-    vel_list.append(v)
     
     t = t + dt
 
