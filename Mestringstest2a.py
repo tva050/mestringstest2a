@@ -9,6 +9,7 @@ import numpy as np
 # r=r/a=r/b
 r_a = np.arange(0.5, 3, 0.001) 
 
+
 # Lennard-Jones potential
 def lj_p(r_a):
     """
@@ -20,13 +21,15 @@ def lj_p(r_a):
     
     return func
 
-# Getting the values for minimum point
+
 x_min = r_a[np.argmin(lj_p(r_a))]
 y_min = min(lj_p(r_a))
 
 print("MINIMUM POINT OF FUNCTION lj_p")
 print("-----------------------------------------------------")
 print("x-min:", round(x_min, 3),"|", "y-min:", round(y_min,4))
+
+
 
 # Physical variables
 m = 1           # mass
@@ -45,6 +48,8 @@ dt = 0.001
 position_list = []  
 time_list = []
 
+vel_list = []
+
 while t < tmax:
     
     # Force 
@@ -57,12 +62,15 @@ while t < tmax:
     
     position_list.append(r)
     time_list.append(t)
+    vel_list.append(v)
     
     t = t + dt
 
-plt.plot(r_a,lj_p(r_a), color="red")
+plt.scatter(x_min,y_min, zorder = 2, color= "blue")
+plt.scatter(1.5, -0.075, zorder = 3, color= "black")
+plt.plot(r_a,lj_p(r_a),zorder = 1, color="red")
 plt.axhline(y=0, color="black", linestyle='--')
-plt.title("Plot v/v0 against r/a, (2a.1)")
+plt.title("Potential, (2a.1)")
 plt.xlabel("r/a")
 plt.ylabel(r'$v/v_0$')
 plt.ylim((-0.3,0.1))
